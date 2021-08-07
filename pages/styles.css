@@ -1,0 +1,206 @@
+body {
+    background-color: 404247
+}
+
+#rect1 {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0px;
+    top: 0px;
+
+    background: #333333;
+}
+
+#logo {
+    position:absolute;
+    width:50px;
+    height:50px;
+    left:3px;
+    top:3px;
+}
+
+#title {
+    position: absolute;
+    width: 251px;
+    height: 35px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    text-align: center;
+
+    color: #FFFFFF;
+    left:37px;
+    top:3px;
+}
+
+#gear {
+position: absolute;
+width: 24px;
+height: 24px;
+left: 360px;
+top: 19px;
+
+}
+
+#lofiVid {
+    position:absolute;
+    left:0px;
+    top:60px;
+    background-color: #000000;
+}
+
+#blackbox {
+    position:absolute;
+    left:0px;
+    top:60px;
+    width:397px;
+    height:226px;
+}
+
+#timeRect {
+    position: absolute;
+    width: 250px;
+    height: 60px;
+    left: 28px;
+    top: 304px;
+
+    background: #000000;
+    border-radius: 6px;
+}
+
+#timeDisplay {
+    position: absolute;
+    width: 300px;
+    height: 35px;
+    top: 313px;
+    left: 0px;
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    line-height: 35px;
+    text-align: center;
+    color: #FFFFFF;
+}
+
+#button {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 300px;
+    top: 304px;
+
+    background: #E90000;
+    border: 1px solid #000000;
+    box-sizing: border-box;
+    font-size: 12px;
+    border-radius:100px;
+    font-weight: bold;
+}
+
+#workLengthSpan {
+    position: absolute;
+    width: 166px;
+    height: 31px;
+    left: 41px;
+    top: 375px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+#userWorkTime {
+    position: absolute;
+    width: 60px;
+    height: 25px;
+    left: 210px;
+    top: 370px;
+    text-align:center;
+
+    background: #000000;
+    border-radius: 6px;
+    color: white;
+}
+
+#submitUserWorkTime {
+    position: absolute;
+    width: 57px;
+    height: 32px;
+    left: 302px;
+    top: 370px;
+    font-size:12px;
+    font-family: Roboto;
+    font-style: normal;
+    text-align: center;
+    background: #C4C4C4;
+}
+
+#breakLengthSpan {
+    position: absolute;
+    width: 166px;
+    height: 31px;
+    left: 38px;
+    top: 410px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+#userBreakTime {
+    position: absolute;
+    width: 60px;
+    height: 25px;
+    left: 210px;
+    top: 405px;
+    text-align:center;
+
+    background: #000000;
+    border-radius: 6px;
+    color: white;
+}
+
+#submitUserBreakTime {
+    position: absolute;
+    width: 57px;
+    height: 32px;
+    left: 302px;
+    top: 405px;
+    font-size:12px;
+    font-family: Roboto;
+    font-style: normal;
+    text-align: center;
+    background: #C4C4C4;
+}
+
+#pomodorosCompleted {
+    position: absolute;
+    width: 258px;
+    height: 31px;
+    left: 81px;
+    top: 447px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+
+    color: #FFFFFF;
+}

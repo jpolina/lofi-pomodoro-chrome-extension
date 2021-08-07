@@ -1,33 +1,51 @@
+<!-- https://www.pikpng.com/downpngs/hbTxToJ_clip-art-png-download/ -->
+
 <!doctype html>
 <html>
     <head>
         <title>Lofi Music Pomodoro Assistant</title>
+        <link rel="stylesheet" href="styles.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
     </head>
     
     <body>
-        <h1>Pomodoro Timer</h1>
-        <iframe
-            id = "lofiVid"
-            width="400"
-            height="228"
-            src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1"
-            title="YouTube video player"
-            allow="accelerometer"; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allow = fullscreen>
-        </iframe>
-        <p id = "sentence"></p>
-        <span id="timeDisplay"></span>
-        <button id="button">Pause</button>
-        <br>
-
-        <span>Work length:  </span>
-        <input id = "userWorkTime" type=number value=25>
-        <button id = "submitUserWorkTime">OK</button>
+        <div>
+            <div id=rect1></div>
+            <img src="/img/tomato.png" id="logo">
+            <h1 id=title>Pomodoro Assistant</h1>
+            <a href="https://github.com/jpolina/lofi-pomodoro-chrome-extension" target="_blank">
+                <img src = "/img/gear.png" id = "gear">
+            </a>
+        </div>
+        <div>
+            <div id="blackbox"></div>
+            <iframe
+                id = "lofiVid"
+                width="397"
+                height="226"
+                src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1"
+                title="YouTube video player"
+                allow="accelerometer"; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture allow = fullscreen>
+            </iframe>
+        </div>
+        <div>
+            <div id=timeRect></div>
+            <span id="timeDisplay"></span>
+            <button id="button">Pause</button>
+        </div>
         
-        <br>
+        <div>
+            <span id="workLengthSpan">Work length:  </span>
+            <input id = "userWorkTime" type=number value=25>
+            <button id = "submitUserWorkTime">Submit</button>
 
-        <span>Break length: </span>
-        <input id = "userBreakTime" type=number value=5>
-        <button id = "submitUserBreakTime">OK</button>
+            <span id = "breakLengthSpan">Break length: </span>
+            <input id = "userBreakTime" type=number value=5>
+            <button id = "submitUserBreakTime">Submit</button>
+        </div>
+
         <div id = "pomodorosCompleted"></div>
         <script src="../timer.js"></script>
     </body>

@@ -51,7 +51,11 @@ var x = setInterval(function() {
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
     // Output the result in an element with id="timeDisplay"
-    document.getElementById("timeDisplay").innerHTML = minutes + "m " + seconds + "s ";
+    if (working) {
+        document.getElementById("timeDisplay").innerHTML = "Work: " + minutes + "m " + seconds + "s ";
+    } else {
+        document.getElementById("timeDisplay").innerHTML = "Break: " + minutes + "m " + seconds + "s ";
+    }
     
     if (distance<=1000) {
         alarm.play();
@@ -71,12 +75,6 @@ var x = setInterval(function() {
             window.alert("Time's up, get to working for "+workMinutes+" minutes!", "_blank");
             completed++;
         }
-    }
-
-    if (working) {
-        document.getElementById("sentence").innerHTML = "Get to working!"
-    } else {
-        document.getElementById("sentence").innerHTML = "Take a break!"
     }
 
     // Number of pomodoros completed
