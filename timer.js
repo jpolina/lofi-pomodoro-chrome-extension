@@ -4,14 +4,16 @@ var paused = false;
 function pause() {
     if (paused===false){
         paused = true;
+        document.getElementById("lofiVid").src="";
         document.getElementById("button").innerHTML = "Resume";
     } else {
         paused = false;
+        document.getElementById("lofiVid").src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
         document.getElementById("button").innerHTML = "Pause";
     }
 }
 
-var work = true;
+var working = true;
 const workMinutes=25;
 const breakMinutes=5;
 var distance = workMinutes * 60000;
@@ -31,23 +33,25 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
     
     // If the count down is over, write some text 
-    if (distance < 0) {   
-        work = !work;     
+    if (distance < 0) {
+        document.getElementById("lofiVid").src="";
+        working = !working;
         document.getElementById("demo").innerHTML = "Time's up!";
         
-        if (!work) { // Break is starting
+        if (!working) { // Break is starting
             distance = breakMinutes * 60000;
             window.alert("Time's up, Take a "+breakMinutes+" minute break!", "_blank");
-        } else { // Work is starting
+        } else { // working is starting
+            document.getElementById("lofiVid").src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
             distance = workMinutes * 60000;
-            window.alert("Time's up, get to work for "+workMinutes+" minutes!", "_blank");
+            window.alert("Time's up, get to working for "+workMinutes+" minutes!", "_blank");
         }
     }
 
-    if (work) {
-        document.getElementById("workornot").innerHTML = "Get to work!"
-    
+    if (working) {
+        document.getElementById("sentence").innerHTML = "Get to working!"
     } else {
-        document.getElementById("workornot").innerHTML = "Take a break!"
+        document.getElementById("sentence").innerHTML = "Take a break!"
     }
 }, 1000);
+
