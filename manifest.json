@@ -1,0 +1,19 @@
+{ 
+    "manifest_version": 2,
+    "name": "Lofi Pomodoro Timer",
+    "description": "A pomodoro timer with lofi music.", 
+    "version": "1",
+    "author": "Jonathan Polina",
+
+    "browser_action": { 
+        "default_icon": "red.png", 
+        "default_popup": "/pages/popup.html"
+    },
+
+    "background":{
+        "scripts": ["background.js"]
+    },
+
+    "permissions": ["storage"],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
+}
