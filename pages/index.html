@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
     <head>
-        <title>Test</title>
+        <title>Lofi Music Pomodoro Assistant</title>
     </head>
     
     <body>
@@ -15,9 +15,20 @@
             allow="accelerometer"; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allow = fullscreen>
         </iframe>
         <p id = "sentence"></p>
-        <p id="demo"></p>
-
+        <span id="timeDisplay"></span>
         <button id="button">Pause</button>
+        <br>
+
+        <span>Work length:  </span>
+        <input id = "userWorkTime" placeholder=25 type=number>
+        <button id = "submitUserWorkTime">OK</button>
+        
+        <br>
+
+        <span>Break length: </span>
+        <input id = "userBreakTime" placeholder=5 type=number>
+        <button id = "submitUserBreakTime">OK</button>
+
         <script src="../timer.js"></script>
     </body>
 </html>

@@ -1,5 +1,13 @@
 document.getElementById("button").addEventListener("click", pause);
+document.getElementById("submitUserWorkTime").addEventListener("click", changeWorkLength);
+document.getElementById("submitUserBreakTime").addEventListener("click", changeBreakLength);
 
+var working = true;
+var workMinutes=25;
+var breakMinutes=5;
+var distance = workMinutes * 60000;
+
+// PAUSE
 var paused = false;
 function pause() {
     if (paused===false){
@@ -13,10 +21,19 @@ function pause() {
     }
 }
 
-var working = true;
-const workMinutes=25;
-const breakMinutes=5;
-var distance = workMinutes * 60000;
+// Change times
+function changeWorkLength() {
+    workMinutes = (document.getElementById("userWorkTime").value);
+    distance = workMinutes * 60000;
+    working = true;
+}
+function changeBreakLength() {
+    breakMinutes = (document.getElementById("userBreakTime").value);
+    distance = breakMinutes * 60000;
+    working = false;
+}
+
+// TIMER
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -29,18 +46,18 @@ var x = setInterval(function() {
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
     
-    // Output the result in an element with id="demo"
-    document.getElementById("demo").innerHTML = minutes + "m " + seconds + "s ";
+    // Output the result in an element with id="timeDisplay"
+    document.getElementById("timeDisplay").innerHTML = minutes + "m " + seconds + "s ";
     
     // If the count down is over, write some text 
     if (distance < 0) {
         document.getElementById("lofiVid").src="";
         working = !working;
-        document.getElementById("demo").innerHTML = "Time's up!";
+        document.getElementById("timeDisplay").innerHTML = "Time's up!";
         
         if (!working) { // Break is starting
             distance = breakMinutes * 60000;
-            window.alert("Time's up, Take a "+breakMinutes+" minute break!", "_blank");
+            window.alert("Time's up, Take a "+ breakMinutes+" minute break!", "_blank");
         } else { // working is starting
             document.getElementById("lofiVid").src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
             distance = workMinutes * 60000;
