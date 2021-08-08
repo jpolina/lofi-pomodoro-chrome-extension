@@ -1,6 +1,6 @@
 { 
     "manifest_version": 2,
-    "name": "Lofi Pomodoro Timer",
+    "name": "Lofidoro",
     "description": "A pomodoro timer with lofi music.", 
     "version": "1",
     "author": "Jonathan Polina",
@@ -13,5 +13,5 @@
         "scripts": ["background.js"]
     },
 
-    "permissions": ["storage"]
+    "permissions": []
 }
