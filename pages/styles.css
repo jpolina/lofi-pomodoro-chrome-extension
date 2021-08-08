@@ -38,11 +38,11 @@ body {
 }
 
 #gear {
-position: absolute;
-width: 24px;
-height: 24px;
-left: 360px;
-top: 19px;
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    left: 360px;
+    top: 19px;
 
 }
 
@@ -87,6 +87,15 @@ top: 19px;
     color: #FFFFFF;
 }
 
+#progressbar {
+    position:absolute;
+    height:4px;
+    top:360px;
+    left:29px;
+    background-color: white;
+    border-radius:6px;
+}
+
 #button {
     position: absolute;
     width: 60px;
@@ -126,23 +135,11 @@ top: 19px;
     left: 210px;
     top: 370px;
     text-align:center;
-
+    font-style:bold;
+    font-size:17px;
     background: #000000;
     border-radius: 6px;
     color: white;
-}
-
-#submitUserWorkTime {
-    position: absolute;
-    width: 57px;
-    height: 32px;
-    left: 302px;
-    top: 370px;
-    font-size:12px;
-    font-family: Roboto;
-    font-style: normal;
-    text-align: center;
-    background: #C4C4C4;
 }
 
 #breakLengthSpan {
@@ -168,24 +165,26 @@ top: 19px;
     height: 25px;
     left: 210px;
     top: 405px;
+    font-size:17px;
     text-align:center;
-
+    font-style:bold;
     background: #000000;
     border-radius: 6px;
     color: white;
 }
 
-#submitUserBreakTime {
+#submitUserTimes {
     position: absolute;
-    width: 57px;
-    height: 32px;
-    left: 302px;
-    top: 405px;
+    width: 60px;
+    height: 60px;
+    left: 300px;
+    top: 374px;
     font-size:12px;
     font-family: Roboto;
     font-style: normal;
     text-align: center;
     background: #C4C4C4;
+    border-radius: 100px;
 }
 
 #pomodorosCompleted {

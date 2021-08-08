@@ -1,6 +1,5 @@
 document.getElementById("button").addEventListener("click", pause);
-document.getElementById("submitUserWorkTime").addEventListener("click", changeWorkLength);
-document.getElementById("submitUserBreakTime").addEventListener("click", changeBreakLength);
+document.getElementById("submitUserTimes").addEventListener("click", changeLengths);
 
 var working = true;
 var workMinutes=25;
@@ -23,18 +22,13 @@ function pause() {
     }
 }
 
-// Change times
-function changeWorkLength() {
+// Change durations of periods
+function changeLengths() {
     workMinutes = (document.getElementById("userWorkTime").value);
+    document.getElementById("lofiVid").src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
+    breakMinutes = (document.getElementById("userBreakTime").value);
     distance = workMinutes * 60000;
     working = true;
-    document.getElementById("lofiVid").src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
-}
-function changeBreakLength() {
-    breakMinutes = (document.getElementById("userBreakTime").value);
-    distance = breakMinutes * 60000;
-    working = false;
-    document.getElementById("lofiVid").src="";
 }
 
 // TIMER
@@ -67,17 +61,23 @@ var x = setInterval(function() {
         working = !working;
         document.getElementById("timeDisplay").innerHTML = "Time's up!";
         if (!working) { // Break is starting
-            distance = breakMinutes * 60000;
             window.alert("Time's up, Take a "+ breakMinutes+" minute break!", "_blank");
+            distance = breakMinutes * 60000;
         } else { // working is starting
+            window.alert("Time's up, get to working for "+workMinutes+" minutes!", "_blank");
             document.getElementById("lofiVid").src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
             distance = workMinutes * 60000;
-            window.alert("Time's up, get to working for "+workMinutes+" minutes!", "_blank");
             completed++;
         }
     }
 
+    //Progress bar
+    if (working) {
+        document.getElementById("progressbar").style.width=((workMinutes-distance/60000)/workMinutes)*249 + "px";
+    } else {
+        document.getElementById("progressbar").style.width=((breakMinutes-distance/60000)/breakMinutes)*249+ "px";
+    }
+    
     // Number of pomodoros completed
     document.getElementById("pomodorosCompleted").innerHTML = "Pomodoros Completed: " + completed;
 }, 1000);
-
