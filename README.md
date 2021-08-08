@@ -6,4 +6,4 @@ To run the extension:
 1. Download the extension
 2. Go to chrome://extensions
 3. Click Load unpacked
-4. Select the directory where the extension is inside
+4. Select the directory with the extension inside
