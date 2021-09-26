@@ -105,18 +105,20 @@ body {
     text-align: center;
     justify-content: center;
     display: flex;
-    /* line-height: 3.7em; */
-    border-radius: 100px;
 
-    /* background: #E90000; */
-    /* border: 1px solid #000000; */
+    border-radius: 100px;
     box-sizing: border-box;
     font-size: 12px;
-    font-weight: bold;
+    border-width:3px;
+}
+
+.btn:focus {
+    box-shadow: none;
+    outline: none;
 }
 
 #buttonContent {
-    line-height: 40px;
+    margin-top: 28%;
 }
 
 #workLengthSpan {
@@ -193,6 +195,10 @@ body {
     text-align: center;
     /* background: #C4C4C4; */
     border-radius: 100px;
+    border-width: 3px;
+    color:white;
+    font-size:13px;
+
 }
 
 #pomodorosCompleted {
