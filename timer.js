@@ -1,5 +1,5 @@
 document.getElementById("button").addEventListener("click", pause);
-document.getElementById("submitUserTimes").addEventListener("click", changeLengths);
+document.getElementById("saveButton").addEventListener("click", changeLengths);
 
 var working = true;
 var workMinutes=25;
@@ -14,11 +14,11 @@ function pause() {
     if (paused===false){
         paused = true;
         document.getElementById("lofiVid").src="";
-        document.getElementById("button").innerHTML = "Resume";
+        document.getElementById("buttonContent").src="./../img/playbutton.png"
     } else {
         paused = false;
         document.getElementById("lofiVid").src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
-        document.getElementById("button").innerHTML = "Pause";
+        document.getElementById("buttonContent").src="./../img/pausebutton.png"
     }
 }
 

@@ -34,7 +34,7 @@ body {
 
     color: #FFFFFF;
     left:37px;
-    top:3px;
+    top:17px;
 }
 
 #gear {
@@ -102,13 +102,21 @@ body {
     height: 60px;
     left: 300px;
     top: 304px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    /* line-height: 3.7em; */
+    border-radius: 100px;
 
-    background: #E90000;
-    border: 1px solid #000000;
+    /* background: #E90000; */
+    /* border: 1px solid #000000; */
     box-sizing: border-box;
     font-size: 12px;
-    border-radius:100px;
     font-weight: bold;
+}
+
+#buttonContent {
+    line-height: 40px;
 }
 
 #workLengthSpan {
@@ -173,17 +181,17 @@ body {
     color: white;
 }
 
-#submitUserTimes {
+#saveButton {
     position: absolute;
     width: 60px;
     height: 60px;
     left: 300px;
     top: 374px;
     font-size:12px;
-    font-family: Roboto;
+    /* font-family: Roboto; */
     font-style: normal;
     text-align: center;
-    background: #C4C4C4;
+    /* background: #C4C4C4; */
     border-radius: 100px;
 }
 
@@ -202,4 +210,8 @@ body {
     text-align: center;
 
     color: #FFFFFF;
+}
+
+html {
+    background-color: grey;
 }
