@@ -1,8 +1,12 @@
 <!-- 
     Image links:
-    https://www.pikpng.com/downpngs/hbTxToJ_clip-art-png-download/
-    https://www.pngwing.com/en/free-png-zqngb
-    https://www.pngwing.com/en/free-png-zazqa
+    https://www.iconsdb.com/white-icons/settings-icon.html
+
+    Sound links:
+    https://mixkit.co/free-sound-effects/alarm/
+
+    Video links:
+    https://www.youtube.com/watch?v=5qap5aO4i9A
 -->
 
 <!doctype html>
@@ -13,18 +17,31 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="./styles.css">
     </head>
     <meta charset="utf-8"/>
     <body>
-        <div>
+        
+        <header>
             <div id=rect1></div>
             <img src="/img/tomato.png" id="logo">
             <h1 id=title>Pomodoro Assistant</h1>
-            <a href="https://github.com/jpolina/lofi-pomodoro-chrome-extension" target="_blank">
-                <img src = "/img/github.png" id = "gear">
-            </a>
-        </div>
+
+            <button class=settings-toggle>
+                <img src="./../img/gear.png" class="gear" alt="Settings"></i>
+            </button>
+
+            <div class = "settings">
+                <span id="workLengthSpan">Work length:  </span>
+                <input id = "userWorkTime" type=number value=25 class=form-control>
+                <span id = "breakLengthSpan">Break length: </span>
+                <input id = "userBreakTime" type=number value=5 class=form-control>
+                <button id = "saveButton" class = "btn btn-outline-secondary save-button">Save</button>
+                <!-- <a href="https://github.com/jpolina/lofi-pomodoro-chrome-extension" target="_blank">
+                <img src = "/img/github.png" id = "">
+            </a> -->
+            </div>
+        </header>
         <div>
             <div id="blackbox"></div>
             <iframe
@@ -44,14 +61,6 @@
             <button id="button" class = "btn btn-outline-danger">
                 <img src = "./../img/pauseButton.png" height = 25px id = "buttonContent" alt = "Pause">
             </button>
-        </div>
-        
-        <div>
-            <span id="workLengthSpan">Work length:  </span>
-            <input id = "userWorkTime" type=number value=25>
-            <span id = "breakLengthSpan">Break length: </span>
-            <input id = "userBreakTime" type=number value=5>
-            <button id = "saveButton" class = "btn btn-outline-secondary">Save</button>
         </div>
 
         <div id = "pomodorosCompleted"></div>

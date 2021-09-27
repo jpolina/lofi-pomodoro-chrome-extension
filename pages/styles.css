@@ -14,10 +14,10 @@ body {
 
 #logo {
     position:absolute;
-    width:50px;
-    height:50px;
-    left:3px;
-    top:3px;
+    width:42px;
+    height:42px;
+    left:10px;
+    top:6px;
 }
 
 #title {
@@ -33,19 +33,76 @@ body {
     text-align: center;
 
     color: #FFFFFF;
-    left:37px;
-    top:17px;
+    left:39px;
+    top:19px;
 }
 
-#gear {
+/* SETTINGS */
+
+.settings {
+    position: fixed;
+    background: #222222;
+    color: var(--clr-light);
+    top: 60px;
+    height: 226px;
+    left: 0;
+    right: 0;
+    z-index:100;
+
+    transform:translateX(100%);
+    transition: transform 250ms cubic-bezier(.5, 0, .5, 1);
+}
+
+.settings-open .settings{
+    transform: translatex(0);
+}
+
+.settings-open .settings-toggle {
+    position: fixed;
+}
+
+.settings-toggle {
+    padding: .5em;
+    background: transparent;
+    border: 0;
+    cursor: pointer;
     position: absolute;
-    width: 24px;
-    height: 24px;
-    left: 360px;
-    top: 19px;
-
+    right: 1em;
+    top: 1em;
 }
 
+.gear {
+    display: block;
+    position: relative;
+    margin-top:-10px;
+    overflow:hidden;
+    transition-duration:0.8s;
+    transition-property: transform;
+}
+
+.gear,
+.gear::before,
+.gear::after {
+    background: var(--clr-accent);
+    width: 2em;
+    height:2em;
+    transition: transform 0.6s
+}
+
+.gear::before,
+.gear::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+}
+
+.gear:hover {
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+}
+
+/* END */
 #lofiVid {
     position:absolute;
     left:0px;
@@ -76,7 +133,7 @@ body {
     position: absolute;
     width: 300px;
     height: 35px;
-    top: 313px;
+    top: 318px;
     left: 0px;
     font-family: Roboto;
     font-style: normal;
@@ -126,7 +183,7 @@ body {
     width: 166px;
     height: 31px;
     left: 41px;
-    top: 375px;
+    top: 80px;
 
     font-family: Roboto;
     font-style: normal;
@@ -140,15 +197,10 @@ body {
 
 #userWorkTime {
     position: absolute;
-    width: 60px;
-    height: 25px;
-    left: 210px;
-    top: 370px;
-    text-align:center;
-    font-style:bold;
-    font-size:17px;
+    width: 85px;
+    left: 200px;
+    top: 73px;
     background: #000000;
-    border-radius: 6px;
     color: white;
 }
 
@@ -157,7 +209,7 @@ body {
     width: 166px;
     height: 31px;
     left: 38px;
-    top: 410px;
+    top: 125px;
 
     font-family: Roboto;
     font-style: normal;
@@ -171,15 +223,10 @@ body {
 
 #userBreakTime {
     position: absolute;
-    width: 60px;
-    height: 25px;
-    left: 210px;
-    top: 405px;
-    font-size:17px;
-    text-align:center;
-    font-style:bold;
+    width: 85px;
+    left: 200px;
+    top: 117px;
     background: #000000;
-    border-radius: 6px;
     color: white;
 }
 
@@ -188,7 +235,7 @@ body {
     width: 60px;
     height: 60px;
     left: 300px;
-    top: 374px;
+    top: 82px;
     font-size:12px;
     /* font-family: Roboto; */
     font-style: normal;
@@ -205,8 +252,8 @@ body {
     position: absolute;
     width: 258px;
     height: 31px;
-    left: 81px;
-    top: 447px;
+    left: 79px;
+    top: 380px;
 
     font-family: Roboto;
     font-style: normal;

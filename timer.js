@@ -8,17 +8,30 @@ var distance = workMinutes * 60000;
 var completed=0;
 var alarm = new Audio('/sounds/alarm.wav');
 
+// SETTINGS
+const settingsToggle = document.querySelector('.settings-toggle');
+const saveButton = document.querySelector('.save-button');
+
+settingsToggle.addEventListener('click',()=>{
+    document.body.classList.toggle('settings-open')
+})
+
+saveButton.addEventListener('click', () => {
+    document.body.classList.remove('settings-open');
+})
+
+
 // PAUSE
 var paused = false;
 function pause() {
     if (paused===false){
         paused = true;
         document.getElementById("lofiVid").src="";
-        document.getElementById("buttonContent").src="./../img/playbutton.png"
+        document.getElementById("buttonContent").src="./../img/playButton.png"
     } else {
         paused = false;
         document.getElementById("lofiVid").src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
-        document.getElementById("buttonContent").src="./../img/pausebutton.png"
+        document.getElementById("buttonContent").src="./../img/pauseButton.png"
     }
 }
 
@@ -29,6 +42,8 @@ function changeLengths() {
     breakMinutes = (document.getElementById("userBreakTime").value);
     distance = workMinutes * 60000;
     working = true;
+    paused = false;
+    document.getElementById("buttonContent").src="./../img/pauseButton.png"
 }
 
 // TIMER
@@ -37,12 +52,13 @@ function changeLengths() {
 var x = setInterval(function() {
     // Decrease time
     if (!paused){
-    distance -=1000;
+    distance -=100;
     }
 
     // Time calculations for days, hours, minutes and seconds
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    var minutes = Math.floor((distance-seconds)/ (1000 * 60));
+    
     
     // Output the result in an element with id="timeDisplay"
     if (working) {
@@ -51,12 +67,13 @@ var x = setInterval(function() {
         document.getElementById("timeDisplay").innerHTML = "Break: " + minutes + "m " + seconds + "s ";
     }
     
-    if (distance<=1000) {
+    if (distance<=100) {
         alarm.play();
     }
 
     // If the count down is over, write some text 
     if (distance < 0) {
+        
         document.getElementById("lofiVid").src="";
         working = !working;
         document.getElementById("timeDisplay").innerHTML = "Time's up!";
@@ -80,4 +97,4 @@ var x = setInterval(function() {
     
     // Number of pomodoros completed
     document.getElementById("pomodorosCompleted").innerHTML = "Pomodoros Completed: " + completed;
-}, 1000);
+}, 100);

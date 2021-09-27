@@ -3,6 +3,6 @@ chrome.browserAction.onClicked.addListener(function(tab) {
         url: chrome.runtime.getURL("/pages/index.html"),
         type:"popup",
         width:400,
-        height:500
+        height:440
     });
 });
