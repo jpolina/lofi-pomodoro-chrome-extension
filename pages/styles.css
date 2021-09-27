@@ -74,9 +74,9 @@ body {
 .gear {
     display: block;
     position: relative;
-    margin-top:-10px;
+    margin-top:-11px;
     overflow:hidden;
-    transition-duration:0.8s;
+    transition-duration:0.2s;
     transition-property: transform;
 }
 
@@ -84,8 +84,8 @@ body {
 .gear::before,
 .gear::after {
     background: var(--clr-accent);
-    width: 2em;
-    height:2em;
+    width: 2.3em;
+    height:2.3em;
     transition: transform 0.4s
 }
 
@@ -160,7 +160,7 @@ body {
     left: 300px;
     top: 304px;
     text-align: center;
-    justify-content: center;
+    /*justify-content: center;*/
     display: flex;
 
     border-radius: 100px;
@@ -176,6 +176,7 @@ body {
 
 #buttonContent {
     margin-top: 28%;
+    margin-left:4px;
 }
 
 #workLengthSpan {
