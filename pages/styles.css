@@ -67,7 +67,7 @@ body {
     border: 0;
     cursor: pointer;
     position: absolute;
-    right: 1em;
+    right: 0.6em;
     top: 1em;
 }
 
@@ -86,7 +86,7 @@ body {
     background: var(--clr-accent);
     width: 2em;
     height:2em;
-    transition: transform 0.6s
+    transition: transform 0.4s
 }
 
 .gear::before,
@@ -252,7 +252,7 @@ body {
     position: absolute;
     width: 258px;
     height: 31px;
-    left: 79px;
+    left: 75px;
     top: 380px;
 
     font-family: Roboto;
