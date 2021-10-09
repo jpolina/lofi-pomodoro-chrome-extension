@@ -72,20 +72,22 @@ var x = setInterval(function() {
     }
 
     // If the count down is over, write some text 
-    if (distance < 0) {
-        
+    if (distance<=100) {
         document.getElementById("lofiVid").src="";
-        working = !working;
-        document.getElementById("timeDisplay").innerHTML = "Time's up!";
-        if (!working) { // Break is starting
-            window.alert("Time's up, Take a "+ breakMinutes+" minute break!", "_blank");
-            distance = breakMinutes * 60000;
-        } else { // working is starting
+    }
+
+    if (distance < 0) {
+        if (!working) {
             window.alert("Time's up, get to working for "+workMinutes+" minutes!", "_blank");
             document.getElementById("lofiVid").src="https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
             distance = workMinutes * 60000;
             completed++;
+        } else {
+            window.alert("Time's up, Take a "+ breakMinutes+" minute break!", "_blank");
+            distance = breakMinutes * 60000;
+            
         }
+        working = !working;
     }
 
     //Progress bar
