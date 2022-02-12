@@ -232,6 +232,34 @@ body {
     color: white;
 }
 
+#enableAlertsSpan {
+    position: absolute;
+    width: 166px;
+    height: 31px;
+    left: 36px;
+    top: 170px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+#enableAlerts {
+    position: absolute;
+    left: 200px;
+    top: 170px;
+    width:20px;
+    height:20px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+
 #saveButton {
     position: absolute;
     width: 60px;
