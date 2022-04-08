@@ -1,16 +1,16 @@
 { 
-    "manifest_version": 2,
+    "manifest_version": 3,
     "name": "Lofidoro",
-    "description": "A pomodoro timer with lofi music.", 
-    "version": "2.1",
+    "description": "A pomodoro technique timer with lofi music.", 
+    "version": "3",
     "author": "Jonathan Polina",
 
-    "browser_action": { 
+    "action": { 
         "default_icon": "/img/tomato.png"
     },
 
     "background":{
-        "scripts": ["background.js"]
+        "service_worker": "background.js"
     },
 
     "permissions": []

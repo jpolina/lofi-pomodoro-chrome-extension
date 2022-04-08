@@ -1,5 +1,6 @@
 body {
-    background-color: 404247
+    background-color: 404247;
+    overflow:hidden;
 }
 
 #rect1 {
@@ -16,8 +17,8 @@ body {
     position:absolute;
     width:42px;
     height:42px;
-    left:10px;
-    top:6px;
+    left:11px;
+    top:8px;
 }
 
 #title {
@@ -33,7 +34,7 @@ body {
     text-align: center;
 
     color: #FFFFFF;
-    left:39px;
+    left:40px;
     top:19px;
 }
 
@@ -114,7 +115,7 @@ body {
 #blackbox {
     position:absolute;
     left:0px;
-    top:60px;
+    top:57px;
     width:397px;
     height:226px;
 }
@@ -124,7 +125,7 @@ body {
     width: 250px;
     height: 60px;
     left: 35px;
-    top: 304px;
+    top: 301px;
 
     background: #000000;
     border-radius: 6px;
@@ -134,7 +135,7 @@ body {
     position: absolute;
     width: 300px;
     height: 35px;
-    top: 318px;
+    top: 315px;
     left: 10px;
     font-family: Roboto;
     font-style: normal;
@@ -148,7 +149,7 @@ body {
 #progressbar {
     position:absolute;
     height:4px;
-    top:360px;
+    top:357px;
     left:36px;
     background-color: white;
     border-radius:6px;
@@ -159,7 +160,7 @@ body {
     width: 60px;
     height: 60px;
     left: 306px;
-    top: 304px;
+    top: 301px;
     text-align: center;
     /*justify-content: center;*/
     display: flex;
@@ -185,7 +186,7 @@ body {
     width: 166px;
     height: 31px;
     left: 41px;
-    top: 80px;
+    top: 60px;
 
     font-family: Roboto;
     font-style: normal;
@@ -201,7 +202,7 @@ body {
     position: absolute;
     width: 85px;
     left: 200px;
-    top: 73px;
+    top: 53px;
     background: #000000;
     color: white;
 }
@@ -211,7 +212,7 @@ body {
     width: 166px;
     height: 31px;
     left: 38px;
-    top: 125px;
+    top: 107px;
 
     font-family: Roboto;
     font-style: normal;
@@ -227,7 +228,7 @@ body {
     position: absolute;
     width: 85px;
     left: 200px;
-    top: 117px;
+    top: 99px;
     background: #000000;
     color: white;
 }
@@ -237,7 +238,7 @@ body {
     width: 166px;
     height: 31px;
     left: 36px;
-    top: 170px;
+    top: 150px;
 
     font-family: Roboto;
     font-style: normal;
@@ -252,7 +253,7 @@ body {
 #enableAlerts {
     position: absolute;
     left: 200px;
-    top: 170px;
+    top: 151px;
     width:20px;
     height:20px;
     background:white;
@@ -264,8 +265,8 @@ body {
     position: absolute;
     width: 60px;
     height: 60px;
-    left: 300px;
-    top: 82px;
+    left: 309px;
+    top: 64px;
     font-size:12px;
     /* font-family: Roboto; */
     font-style: normal;
@@ -283,7 +284,7 @@ body {
     width: 258px;
     height: 31px;
     left: 75px;
-    top: 380px;
+    top: 376px;
 
     font-family: Roboto;
     font-style: normal;

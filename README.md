@@ -18,3 +18,5 @@ Demo
 ![Demo](./img/demo1.png)
 Settings opened
 ![Settings](./img/demo2.png)
+
+[Tomato icons created by AomAm - Flaticon](https://www.flaticon.com/free-icons/tomato)
