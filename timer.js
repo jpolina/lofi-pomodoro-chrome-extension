@@ -1,7 +1,8 @@
 document.getElementById("button").addEventListener("click", pause);
 document.getElementById("saveButton").addEventListener("click", changeLengths);
-document.getElementById("enableAlerts").addEventListener("change", updateAlerts);
-document.getElementById("enableSounds").addEventListener("change", updateSounds);
+document.getElementById("notificationSwitch").addEventListener("change", updateAlerts);
+document.getElementById("soundSwitch").addEventListener("change", updateSounds);
+
 
 var working = true;
 var workMinutes = 25;
@@ -77,12 +78,12 @@ function changeLengths() {
 
 // Change durations of periods
 function updateAlerts() {
-    areAlertsEnabled = document.getElementById("enableAlerts").checked;
+    areAlertsEnabled = document.getElementById("notificationSwitch").checked;
 }
 
 // Change durations of periods
 function updateSounds() {
-    areSoundsEnabled = document.getElementById("enableSounds").checked;
+    areSoundsEnabled = document.getElementById("soundSwitch").checked;
 }
 
 // TIMER

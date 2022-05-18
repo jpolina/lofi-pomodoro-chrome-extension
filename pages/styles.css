@@ -186,7 +186,7 @@ body {
     width: 166px;
     height: 31px;
     left: 41px;
-    top: 35px;
+    top: 23px;
 
     font-family: Roboto;
     font-style: normal;
@@ -202,7 +202,7 @@ body {
     position: absolute;
     width: 85px;
     left: 200px;
-    top: 28px;
+    top: 16px;
     background: #000000;
     color: white;
 }
@@ -212,7 +212,7 @@ body {
     width: 166px;
     height: 31px;
     left: 38px;
-    top: 82px;
+    top: 70px;
 
     font-family: Roboto;
     font-style: normal;
@@ -228,17 +228,43 @@ body {
     position: absolute;
     width: 85px;
     left: 200px;
-    top: 74px;
+    top: 62px;
     background: #000000;
     color: white;
+}
+
+#saveButton {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    left: 309px;
+    top: 27px;
+    font-size:12px;
+    /* font-family: Roboto; */
+    font-style: normal;
+    text-align: center;
+    /* background: #C4C4C4; */
+    border-radius: 100px;
+    border-width: 3px;
+    color:white;
+    font-size:13px;
+
+}
+
+#line1 {
+    position:absolute;
+    width:400px;
+    height:3px;
+    top:98px;
+    color:rgba(255, 255, 255, 0.263);
 }
 
 #enableAlertsSpan {
     position: absolute;
     width: 200px;
     height: 31px;
-    left: 20px;
-    top: 129px;
+    left: 70px;
+    top: 139px;
 
     font-family: Roboto;
     font-style: normal;
@@ -250,26 +276,17 @@ body {
     color: #FFFFFF;
 }
 
-#enableAlerts {
+#notificationSwitch {
     position: absolute;
-    left: 264px;
-    top: 130px;
-    width:20px;
-    height:20px;
-    background:white;
-    border-radius:5px;
-    border:2px solid #555;
-}
-
-.form-switch .notificationsSwitch {
-
+    left: 314px;
+    top: 140px;
 }
 
 #enableSoundsSpan {
     position: absolute;
     width: 200px;
     height: 31px;
-    left: 20px;
+    left: 70px;
     top: 175px;
 
     font-family: Roboto;
@@ -282,33 +299,10 @@ body {
     color: #FFFFFF;
 }
 
-#enableSounds {
+#soundSwitch {
     position: absolute;
-    left: 264px;
+    left: 314px;
     top: 176px;
-    width:20px;
-    height:20px;
-    background:white;
-    border-radius:5px;
-    border:2px solid #555;
-}
-
-#saveButton {
-    position: absolute;
-    width: 60px;
-    height: 60px;
-    left: 309px;
-    top: 39px;
-    font-size:12px;
-    /* font-family: Roboto; */
-    font-style: normal;
-    text-align: center;
-    /* background: #C4C4C4; */
-    border-radius: 100px;
-    border-width: 3px;
-    color:white;
-    font-size:13px;
-
 }
 
 #pomodorosCompleted {
