@@ -186,7 +186,7 @@ body {
     width: 166px;
     height: 31px;
     left: 41px;
-    top: 60px;
+    top: 35px;
 
     font-family: Roboto;
     font-style: normal;
@@ -202,7 +202,7 @@ body {
     position: absolute;
     width: 85px;
     left: 200px;
-    top: 53px;
+    top: 28px;
     background: #000000;
     color: white;
 }
@@ -212,7 +212,7 @@ body {
     width: 166px;
     height: 31px;
     left: 38px;
-    top: 107px;
+    top: 82px;
 
     font-family: Roboto;
     font-style: normal;
@@ -228,17 +228,17 @@ body {
     position: absolute;
     width: 85px;
     left: 200px;
-    top: 99px;
+    top: 74px;
     background: #000000;
     color: white;
 }
 
 #enableAlertsSpan {
     position: absolute;
-    width: 166px;
+    width: 200px;
     height: 31px;
-    left: 36px;
-    top: 150px;
+    left: 20px;
+    top: 129px;
 
     font-family: Roboto;
     font-style: normal;
@@ -252,8 +252,40 @@ body {
 
 #enableAlerts {
     position: absolute;
-    left: 200px;
-    top: 151px;
+    left: 264px;
+    top: 130px;
+    width:20px;
+    height:20px;
+    background:white;
+    border-radius:5px;
+    border:2px solid #555;
+}
+
+.form-switch .notificationsSwitch {
+
+}
+
+#enableSoundsSpan {
+    position: absolute;
+    width: 200px;
+    height: 31px;
+    left: 20px;
+    top: 175px;
+
+    font-family: Roboto;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+#enableSounds {
+    position: absolute;
+    left: 264px;
+    top: 176px;
     width:20px;
     height:20px;
     background:white;
@@ -266,7 +298,7 @@ body {
     width: 60px;
     height: 60px;
     left: 309px;
-    top: 64px;
+    top: 39px;
     font-size:12px;
     /* font-family: Roboto; */
     font-style: normal;

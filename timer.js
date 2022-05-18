@@ -1,6 +1,7 @@
 document.getElementById("button").addEventListener("click", pause);
 document.getElementById("saveButton").addEventListener("click", changeLengths);
 document.getElementById("enableAlerts").addEventListener("change", updateAlerts);
+document.getElementById("enableSounds").addEventListener("change", updateSounds);
 
 var working = true;
 var workMinutes = 25;
@@ -8,7 +9,9 @@ var breakMinutes = 5;
 var distance = workMinutes * 60000;
 var completed = 0;
 var alarm = new Audio('/sounds/alarm.wav');
-var areAlertsEnabled = false;
+var areAlertsEnabled = true;
+var areSoundsEnabled = true;
+var currentNotificationID = 0;
 
 // SETTINGS
 const settingsToggle = document.querySelector('.settings-toggle');
@@ -23,9 +26,27 @@ saveButton.addEventListener('click', () => {
 })
 
 
-function myAlert(message) {
+function notify(message) {
+
+    clearAndNotify = async () => {
+        await chrome.notifications.create(
+            'notificationID', {
+                type: 'basic',
+                iconUrl: '../img/tomato.png',
+                title: 'Lofidoro',
+                message: message,
+                priority: 2
+            },
+            function () {}
+        )
+
+        setTimeout(()=>{
+            chrome.notifications.clear('notificationID',function () {})
+        }, 12000)
+    }
+
     if (areAlertsEnabled) {
-        window.alert(message);
+        clearAndNotify();
     }
 }
 
@@ -59,6 +80,11 @@ function updateAlerts() {
     areAlertsEnabled = document.getElementById("enableAlerts").checked;
 }
 
+// Change durations of periods
+function updateSounds() {
+    areSoundsEnabled = document.getElementById("enableSounds").checked;
+}
+
 // TIMER
 
 // Update the count down every 1 second
@@ -81,7 +107,7 @@ var x = setInterval(function () {
     }
 
     if (distance <= 100) {
-        alarm.play();
+        areSoundsEnabled && alarm.play();
     }
 
     // If the count down is over, write some text 
@@ -91,12 +117,12 @@ var x = setInterval(function () {
 
     if (distance < 0) {
         if (!working) {
-            myAlert("Time's up, get to working for " + workMinutes + " minutes!", "_blank");
+            notify("Time's up, start working for " + workMinutes + " minutes!", "_blank");
             document.getElementById("lofiVid").src = "https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
             distance = workMinutes * 60000;
             completed++;
         } else {
-            myAlert("Time's up, Take a " + breakMinutes + " minute break!", "_blank");
+            notify("Time's up, take a " + breakMinutes + " minute break!", "_blank");
             distance = breakMinutes * 60000;
         }
         working = !working;
