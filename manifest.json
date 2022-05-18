@@ -2,7 +2,7 @@
     "manifest_version": 3,
     "name": "Lofidoro",
     "description": "A pomodoro technique timer with lofi music.", 
-    "version": "3",
+    "version": "3.1",
     "author": "Jonathan Polina",
 
     "action": { 

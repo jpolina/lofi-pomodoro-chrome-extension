@@ -183,9 +183,9 @@ body {
 
 #workLengthSpan {
     position: absolute;
-    width: 166px;
+    /* width: 166px; */
     height: 31px;
-    left: 41px;
+    left: 20px;
     top: 23px;
 
     font-family: Roboto;
@@ -193,25 +193,25 @@ body {
     font-weight: bold;
     font-size: 20px;
     line-height: 23px;
-    text-align: center;
+    text-align: left;
 
     color: #FFFFFF;
 }
 
 #userWorkTime {
     position: absolute;
-    width: 85px;
-    left: 200px;
-    top: 16px;
+    width: 70px;
+    height:30px;
+    left: 148px;
+    top: 18px;
     background: #000000;
     color: white;
 }
 
 #breakLengthSpan {
     position: absolute;
-    width: 166px;
     height: 31px;
-    left: 38px;
+    left: 20px;
     top: 70px;
 
     font-family: Roboto;
@@ -219,16 +219,17 @@ body {
     font-weight: bold;
     font-size: 20px;
     line-height: 23px;
-    text-align: center;
+    text-align: left;
 
     color: #FFFFFF;
 }
 
 #userBreakTime {
     position: absolute;
-    width: 85px;
-    left: 200px;
-    top: 62px;
+    width: 70px;
+    height:30px;
+    left: 148px;
+    top: 64px;
     background: #000000;
     color: white;
 }
@@ -237,7 +238,7 @@ body {
     position: absolute;
     width: 60px;
     height: 60px;
-    left: 309px;
+    left: 320px;
     top: 27px;
     font-size:12px;
     /* font-family: Roboto; */
@@ -263,7 +264,7 @@ body {
     position: absolute;
     width: 200px;
     height: 31px;
-    left: 70px;
+    left: 85px;
     top: 139px;
 
     font-family: Roboto;
@@ -271,14 +272,14 @@ body {
     font-weight: bold;
     font-size: 20px;
     line-height: 23px;
-    text-align: center;
+    text-align: left;
 
     color: #FFFFFF;
 }
 
 #notificationSwitch {
     position: absolute;
-    left: 314px;
+    left: 317px;
     top: 140px;
 }
 
@@ -286,7 +287,7 @@ body {
     position: absolute;
     width: 200px;
     height: 31px;
-    left: 70px;
+    left: 85px;
     top: 175px;
 
     font-family: Roboto;
@@ -294,14 +295,14 @@ body {
     font-weight: bold;
     font-size: 20px;
     line-height: 23px;
-    text-align: center;
+    text-align: left;
 
     color: #FFFFFF;
 }
 
 #soundSwitch {
     position: absolute;
-    left: 314px;
+    left: 317px;
     top: 176px;
 }
 
@@ -324,4 +325,8 @@ body {
 
 html {
     background-color: grey;
+}
+
+span {
+    font-family:'Times New Roman', Times, serif;
 }
