@@ -60,7 +60,7 @@ function pause() {
         document.getElementById("buttonContent").src = "./../img/playButton.png"
     } else {
         paused = false;
-        document.getElementById("lofiVid").src = "https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
+        document.getElementById("lofiVid").src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1";
         document.getElementById("buttonContent").src = "./../img/pauseButton.png"
     }
 }
@@ -68,7 +68,7 @@ function pause() {
 // Change durations of periods
 function changeLengths() {
     workMinutes = (document.getElementById("userWorkTime").value);
-    document.getElementById("lofiVid").src = "https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
+    document.getElementById("lofiVid").src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1";
     breakMinutes = (document.getElementById("userBreakTime").value);
     distance = workMinutes * 60000;
     working = true;
@@ -119,7 +119,7 @@ var x = setInterval(function () {
     if (distance < 0) {
         if (!working) {
             notify("Time's up, start working for " + workMinutes + " minutes!", "_blank");
-            document.getElementById("lofiVid").src = "https://www.youtube.com/embed/5qap5aO4i9A?autoplay=1";
+            document.getElementById("lofiVid").src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1";
             distance = workMinutes * 60000;
             completed++;
         } else {
