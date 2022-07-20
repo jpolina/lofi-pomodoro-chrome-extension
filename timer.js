@@ -1,7 +1,7 @@
-document.getElementById("button").addEventListener("click", pause);
-document.getElementById("saveButton").addEventListener("click", changeLengths);
-document.getElementById("notificationSwitch").addEventListener("change", updateAlerts);
-document.getElementById("soundSwitch").addEventListener("change", updateSounds);
+document.querySelector(".pause-button").addEventListener("click", pause);
+document.getElementById("save-button").addEventListener("click", changeLengths);
+document.querySelector(".enable-notifs").addEventListener("change", updateAlerts);
+document.getElementById("enable-alarms").addEventListener("change", updateSounds);
 
 
 var working = true;
@@ -12,19 +12,25 @@ var completed = 0;
 var alarm = new Audio('/sounds/alarm.wav');
 var areAlertsEnabled = true;
 var areSoundsEnabled = true;
-var currentNotificationID = 0;
+let currentNotificationID = 0;
+
 
 // SETTINGS
 const settingsToggle = document.querySelector('.settings-toggle');
 const saveButton = document.querySelector('.save-button');
+const gear = document.querySelector('.gear');
 
-settingsToggle.addEventListener('click', () => {
+gear.addEventListener('click', () => {
     document.body.classList.toggle('settings-open')
 })
 
 saveButton.addEventListener('click', () => {
     document.body.classList.remove('settings-open');
 })
+
+document.querySelector(".rotate").onclick =function () {
+    document.querySelector(".rotate").classList.toggle("down");
+}
 
 
 function notify(message) {
@@ -56,55 +62,55 @@ var paused = false;
 function pause() {
     if (paused === false) {
         paused = true;
-        document.getElementById("lofiVid").src = "";
-        document.getElementById("buttonContent").src = "./../img/playButton.png"
+        document.querySelector(".lofi-vid").src = "";
+        document.querySelector(".button-content").src = "./../img/playButton.png"
     } else {
         paused = false;
-        document.getElementById("lofiVid").src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1";
-        document.getElementById("buttonContent").src = "./../img/pauseButton.png"
+        if (working) document.querySelector(".lofi-vid").src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1";
+        document.querySelector(".button-content").src = "./../img/pauseButton.png"
     }
 }
 
 // Change durations of periods
 function changeLengths() {
-    workMinutes = (document.getElementById("userWorkTime").value);
-    document.getElementById("lofiVid").src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1";
-    breakMinutes = (document.getElementById("userBreakTime").value);
+    workMinutes = (document.getElementById("work-length").value);
+    document.querySelector(".lofi-vid").src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1";
+    breakMinutes = (document.getElementById("break-length").value);
     distance = workMinutes * 60000;
     working = true;
     paused = false;
-    document.getElementById("buttonContent").src = "./../img/pauseButton.png"
+    document.querySelector(".button-content").src = "./../img/pauseButton.png"
 }
 
 // Change durations of periods
 function updateAlerts() {
-    areAlertsEnabled = document.getElementById("notificationSwitch").checked;
+    areAlertsEnabled = document.getElementById("enable-notifs").checked;
 }
 
 // Change durations of periods
 function updateSounds() {
-    areSoundsEnabled = document.getElementById("soundSwitch").checked;
+    areSoundsEnabled = document.getElementById("enable-alarms").checked;
 }
 
 // TIMER
 
 // Update the count down every 1 second
-var x = setInterval(function () {
+let x = setInterval(function () {
     // Decrease time
     if (!paused) {
         distance -= 100;
     }
 
     // Time calculations for days, hours, minutes and seconds
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    var minutes = Math.floor((distance - seconds) / (1000 * 60));
+    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    let minutes = Math.floor((distance - seconds) / (1000 * 60));
 
 
-    // Output the result in an element with id="timeDisplay"
+    // Output the result in an element with id="time-display"
     if (working) {
-        document.getElementById("timeDisplay").innerHTML = "Work: " + minutes + "m " + seconds + "s ";
+        document.querySelector(".time-display").innerHTML = "Work: " + minutes + "m " + seconds + "s ";
     } else {
-        document.getElementById("timeDisplay").innerHTML = "Break: " + minutes + "m " + seconds + "s ";
+        document.querySelector(".time-display").innerHTML = "Break: " + minutes + "m " + seconds + "s ";
     }
 
     if (distance <= 100) {
@@ -113,13 +119,13 @@ var x = setInterval(function () {
 
     // If the count down is over, write some text 
     if (distance <= 100) {
-        document.getElementById("lofiVid").src = "";
+        document.querySelector(".lofi-vid").src = "";
     }
 
     if (distance < 0) {
         if (!working) {
             notify("Time's up, start working for " + workMinutes + " minutes!", "_blank");
-            document.getElementById("lofiVid").src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1";
+            document.querySelector(".lofi-vid").src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1";
             distance = workMinutes * 60000;
             completed++;
         } else {
@@ -130,12 +136,14 @@ var x = setInterval(function () {
     }
 
     //Progress bar
+    let totalLength = document.querySelector(".time-rect").offsetWidth;
+    console.log(totalLength)
     if (working) {
-        document.getElementById("progressbar").style.width = ((workMinutes - distance / 60000) / workMinutes) * 249 + "px";
+        document.querySelector(".progress-bar").style.width = ((workMinutes - distance / 60000) / workMinutes) * totalLength + "px";
     } else {
-        document.getElementById("progressbar").style.width = ((breakMinutes - distance / 60000) / breakMinutes) * 249 + "px";
+        document.querySelector(".progress-bar").style.width = ((breakMinutes - distance / 60000) / breakMinutes) * totalLength + "px";
     }
 
     // Number of pomodoros completed
-    document.getElementById("pomodorosCompleted").innerHTML = "Pomodoros Completed: " + completed;
+    document.querySelector(".pomodoros-completed").innerHTML = "Pomodoros Completed: " + completed;
 }, 100);
