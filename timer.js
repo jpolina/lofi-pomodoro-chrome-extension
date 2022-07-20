@@ -1,18 +1,18 @@
 document.querySelector(".pause-button").addEventListener("click", pause);
 document.getElementById("save-button").addEventListener("click", changeLengths);
-document.querySelector(".enable-notifs").addEventListener("change", updateAlerts);
-document.getElementById("enable-alarms").addEventListener("change", updateSounds);
+document.querySelector("#enable-notifs").addEventListener("change", updateAlerts);
+document.querySelector("#enable-alarms").addEventListener("change", updateSounds);
 
 
-var working = true;
-var workMinutes = 25;
-var breakMinutes = 5;
-var distance = workMinutes * 60000;
-var completed = 0;
-var alarm = new Audio('/sounds/alarm.wav');
-var areAlertsEnabled = true;
-var areSoundsEnabled = true;
-let currentNotificationID = 0;
+let working = true;
+let workMinutes = 25;
+let breakMinutes = 5;
+let distance = workMinutes * 60000;
+let completed = 0;
+let alarm = new Audio('/sounds/alarm.wav');
+let areAlertsEnabled = true;
+let areSoundsEnabled = true;
+const currentNotificationID = 'lofidoro';
 
 
 // SETTINGS
@@ -35,9 +35,9 @@ document.querySelector(".rotate").onclick =function () {
 
 function notify(message) {
 
-    clearAndNotify = async () => {
-        await chrome.notifications.create(
-            'notificationID', {
+    clearAndNotify = () => {
+        chrome.notifications.create(
+            currentNotificationID, {
                 type: 'basic',
                 iconUrl: '../img/tomato.png',
                 title: 'Lofidoro',
@@ -46,10 +46,6 @@ function notify(message) {
             },
             function () {}
         )
-
-        setTimeout(()=>{
-            chrome.notifications.clear('notificationID',function () {})
-        }, 12000)
     }
 
     if (areAlertsEnabled) {
@@ -58,7 +54,7 @@ function notify(message) {
 }
 
 // PAUSE
-var paused = false;
+let paused = false;
 function pause() {
     if (paused === false) {
         paused = true;
@@ -118,7 +114,9 @@ let x = setInterval(function () {
     }
 
     // If the count down is over, write some text 
-    if (distance <= 100) {
+    if (distance <= 300) {
+        chrome.notifications.clear(currentNotificationID,function () {})
+
         document.querySelector(".lofi-vid").src = "";
     }
 
