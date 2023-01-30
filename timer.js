@@ -135,7 +135,6 @@ let x = setInterval(function () {
 
     //Progress bar
     let totalLength = document.querySelector(".time-rect").offsetWidth;
-    console.log(totalLength)
     if (working) {
         document.querySelector(".progress-bar").style.width = ((workMinutes - distance / 60000) / workMinutes) * totalLength + "px";
     } else {

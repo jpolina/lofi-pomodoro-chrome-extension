@@ -94,13 +94,6 @@ body {
     padding-right:3vw;
 }
  
-@media (max-height:300px) {
-    .settings {
-        justify-content: center;
-        gap:2vh;
-    }
-}
- 
 .gear {
     width:min(42px,min(13vw,12vh));
     height:auto;
@@ -139,13 +132,6 @@ body {
  
     box-sizing: border-box;
     width:min(98vw, 360px);
-}
- 
-@media (max-width:230px){
-    .container {
-        margin-left:0;
-        padding-left:2vw;
-    }
 }
  
 label.work-length {
@@ -244,13 +230,6 @@ input.break-length {
     margin:4px 0 2px 0;
     transition: color 1s;
 }
- 
-@media (max-height: 300px) {
-    #hor-line {
-      color: var(--settings-color);
-    }
-   
-  }
  
 label.enable-notifs {
  
@@ -365,7 +344,6 @@ label.enable-alarms {
     font-size: 12px;
     border-width:3px;
     margin-right:8px;
-    display:flex;
     justify-content: center;
     align-items: center;
  
