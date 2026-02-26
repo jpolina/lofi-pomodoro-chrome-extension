@@ -1,3 +1,7 @@
+// Keep YouTube embed source centralized; avoid forcing an invalid origin in extension pages.
+const YT_EMBED_BASE = "https://www.youtube.com/embed/jfKfPfyJRdk";
+const YT_AUTOPLAY_SRC = `${YT_EMBED_BASE}?autoplay=1&rel=0`;
+
 document.querySelector(".pause-button").addEventListener("click", pause);
 document.getElementById("save-button").addEventListener("click", changeLengths);
 document.querySelector("#enable-notifs").addEventListener("change", updateAlerts);
@@ -8,6 +12,7 @@ let working = true;
 let workMinutes = 25;
 let breakMinutes = 5;
 let distance = workMinutes * 60000;
+let timerEndTime = Date.now() + distance;
 let completed = 0;
 let alarm = new Audio('/sounds/alarm.wav');
 let areAlertsEnabled = true;
@@ -62,7 +67,8 @@ function pause() {
         document.querySelector(".button-content").src = "./../img/playButton.png"
     } else {
         paused = false;
-        if (working) document.querySelector(".lofi-vid").src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1";
+        timerEndTime = Date.now() + distance;
+        if (working) document.querySelector(".lofi-vid").src = YT_AUTOPLAY_SRC;
         document.querySelector(".button-content").src = "./../img/pauseButton.png"
     }
 }
@@ -70,9 +76,10 @@ function pause() {
 // Change durations of periods
 function changeLengths() {
     workMinutes = (document.getElementById("work-length").value);
-    document.querySelector(".lofi-vid").src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1";
+    document.querySelector(".lofi-vid").src = YT_AUTOPLAY_SRC;
     breakMinutes = (document.getElementById("break-length").value);
     distance = workMinutes * 60000;
+    timerEndTime = Date.now() + distance;
     working = true;
     paused = false;
     document.querySelector(".button-content").src = "./../img/pauseButton.png"
@@ -94,12 +101,13 @@ function updateSounds() {
 let x = setInterval(function () {
     // Decrease time
     if (!paused) {
-        distance -= 100;
+        distance = timerEndTime - Date.now();
     }
 
     // Time calculations for days, hours, minutes and seconds
-    let seconds = Math.floor((distance % (1000 * 60)) / 1000);
-    let minutes = Math.floor((distance - seconds) / (1000 * 60));
+    const remaining = Math.max(distance, 0);
+    let seconds = Math.floor((remaining % (1000 * 60)) / 1000);
+    let minutes = Math.floor((remaining - seconds) / (1000 * 60));
 
 
     // Output the result in an element with id="time-display"
@@ -123,12 +131,14 @@ let x = setInterval(function () {
     if (distance < 0) {
         if (!working) {
             notify("Time's up, start working for " + workMinutes + " minutes!", "_blank");
-            document.querySelector(".lofi-vid").src = "https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=1";
+            document.querySelector(".lofi-vid").src = YT_AUTOPLAY_SRC;
             distance = workMinutes * 60000;
+            timerEndTime = Date.now() + distance;
             completed++;
         } else {
             notify("Time's up, take a " + breakMinutes + " minute break!", "_blank");
             distance = breakMinutes * 60000;
+            timerEndTime = Date.now() + distance;
         }
         working = !working;
     }
