@@ -332,9 +332,10 @@ body.dark-mode .secondary-button {
 .content-shell {
     padding: 0 10px 10px 10px;
     display: grid;
-    grid-template-rows: auto 1fr;
+    grid-template-rows: minmax(0, 1fr) auto;
     gap: 8px;
     min-height: 0;
+    height: 100%;
 }
 
 .video-wrap {
@@ -347,14 +348,13 @@ body.dark-mode .secondary-button {
 
 .lofi-vid {
     width: 100%;
-    height: min(46vh, 212px);
+    height: 100%;
     border: 0;
     display: block;
 }
 
 .bottom-bar {
     min-height: 0;
-    align-self: start;
     width: 100%;
     background: rgba(255, 249, 241, 0.92);
     border: 1px solid var(--line);
@@ -545,7 +545,11 @@ body.zen-mode .content-shell {
 }
 
 body.zen-mode .lofi-vid {
-    height: min(56vh, 248px);
+    height: 100%;
+}
+
+body.zen-mode .video-wrap {
+    min-height: 248px;
 }
 
 body.zen-mode .bottom-bar {
@@ -619,8 +623,9 @@ body.zen-mode .bottom-bar {
         gap: 6px;
     }
 
-    .lofi-vid {
-        height: 172px;
+    .video-wrap {
+        height: 227x;
+        min-height: 227px;
     }
 
     .bottom-bar {
